@@ -185,19 +185,19 @@ html {
         <p>&nbsp;</p>
         <p>&nbsp;</p>
             <p>&nbsp;</p>
-            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+            <p>此网站是两位黑魂爱好者所建，网站内容涵盖了黑暗之魂3的各项数据</p>
         </div>
 
         <div class="card">
         <h2>黑魂WIKI</h2>
-        <h5>Title description, Sep 2, 2017</h5>
+        <h5>黑暗之魂的各项属性数据</h5>
         <table id="protal_header_1" style="width:96%;">
             <tbody>
                 <tr>
                     <td>
                         <div class="center">
                             <div class="floatnone">
-                                <a href="#" title="Category">
+                                <a href="#" title="人物">
                                     <img src="Images/CharacterIcon.png" alt="error!"
                                         data-image-key="CharacterIcon.png" data-image-name="CharacterIcon.png"
                                         data-src="~/Images/CharacterIcon.png"
@@ -207,25 +207,34 @@ html {
                                         data-image-key="EquipmentIcon.png" data-image-name="EquipmentIcon.png"
                                         data-src="~/Images/EquipmentIcon.png"
                                         width="70" height="70" style="float: left" /></a>
-                                <a href="#" title="">
-                                    <img src="Images/GuideIcon.png" alt="Solaire Icon Grey"
-                                        data-image-key="CharacterIcon.png" data-image-name="CharacterIcon.png"
-                                        data-src="~/Images/CharacterIcon.png"
+                                <a href="#" title="攻略">
+                                    <img src="Images/GuideIcon.png" alt="error!"
+                                        data-image-key="GuideIcon.png" data-image-name="GuideIcon.png"
+                                        data-src="~/Images/GuideIcon.png"
                                         width="70" height="70" style="float: left" /></a>
-                                <a href="#" title="">
-                                    <img src="Images/MultiplayerIcon.png" alt="Solaire Icon Grey"
-                                        data-image-key="CharacterIcon.png" data-image-name="CharacterIcon.png"
-                                        data-src="~/Images/CharacterIcon.png"
+                                <a href="#" title="联机">
+                                    <img src="Images/MultiplayerIcon.png" alt="error!"
+                                        data-image-key="MultiplayerIcon.png" data-image-name="MultiplayerIcon.png"
+                                        data-src="~/Images/MultiplayerIcon.png"
                                         width="70" height="70" style="float: left" /></a>
-
+                                <a href="#" title="属性">
+                                    <img src="Images/StatsIcon.png" alt="error!"
+                                        data-image-key="StatsIcon.png" data-image-name="StatsIcon.png"
+                                        data-src="~/Images/StatsIcon.png"
+                                        width="70" height="70" style="float: left" /></a>
+                                <a href="#" title="法术">
+                                    <img src="Images/SpellIcon.png" alt="error!"
+                                        data-image-key="SpellIcon.png" data-image-name="SpellIcon.png"
+                                        data-src="~/Images/SpellIcon.png"
+                                        width="70" height="70" style="float: left" /></a>
+                                
                             </div>
                         </div>
                     </td>
                 </tr>
             </tbody>
         </table>
-        <p>Some text..</p>
-        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+        <p>此处是对黑暗之魂的各项数据的详细介绍，包含人物，装备，背景，联机，属性，法术等各个板块</p>
         </div>
   </div>
 
