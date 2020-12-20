@@ -11,7 +11,24 @@
   box-sizing: border-box;
 }
 
+.post-tail-wrap {
+    float: right;
+    color: #999;
+    position: relative;
+    padding-bottom:0px; 
+    padding-right:0px;
+}
 
+.id {
+    float: left;
+    position : relative;
+    padding-left : -10px;
+}
+
+.headIcon{
+    height:80%;
+    width:70px;
+}
 
 body {
   font-family: Arial;
@@ -245,13 +262,29 @@ html {
         <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
     </div>
 
-    <div class="card">
-        <h3>Popular Post</h3>
-        <div class="fakeimg"><p>Image</p></div>
-        <div class="fakeimg"><p>Image</p></div>
-        <div class="fakeimg"><p>Image</p></div>
-    </div>
-
+    <asp:ScriptManager ID="script_manager" runat="server"></asp:ScriptManager>
+    <asp:TextBox runat="server" Cssclass="comment_panel" id="comment_input" style="width:60%;height:100px;margin:10px;text-align:left" placeholder="在此处添加评论"/>
+            <br />
+    <asp:button runat="server" ID="add_comment_btn"   style="text-align:end;margin-left:10px;" Text="发布评论"></asp:button>
+    <asp:UpdatePanel ID="update_panel"  runat="server" UpdateMode="Conditional">
+        <ContentTemplate>
+    <asp:Repeater ID="comment_repeater"  runat="server" >
+        <ItemTemplate>
+            <div class="comment_panel">
+                <span> 
+                    <div class="id">
+                        <image class="headIcon" src="../Images/icon.jpg"></image>
+                        <br />
+                        <%# Eval("user") %></div>
+                    <div class="post-tail-wrap clearfix">
+                     <a><%# Eval("time") %></a> </div>
+                        <%# Eval("text") %>
+                </span>
+            </div>
+        </ItemTemplate>
+    </asp:Repeater>
+        </ContentTemplate>
+    </asp:UpdatePanel>
     <div class="card">
         <h3>Follow Me</h3>
         <p>Some text..</p>
