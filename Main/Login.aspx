@@ -17,20 +17,12 @@
          <asp:Panel ID="log_in_pannel" runat="server">
             <h2 style="color:red ">LOGIN</h2>
             <asp:TextBox ID="login_user" runat="server" placeholder="用户名">
-
             </asp:TextBox>
-            <p>
-
-            </p>
+            <p></p>
             <asp:TextBox ID="login_passwd" runat="server" placeholder="密码" type ="password"></asp:TextBox>
- 
-            <p>
-                            <asp:Label id="login_alert" runat="server"></asp:Label>
-            </p>
-            
+            <p><asp:Label id="login_alert" runat="server"></asp:Label></p>
             <asp:Button ID="redirect_register_btn" text="注册" OnClick="register_btn_Click1" runat="server" CssClass="button" />
             <asp:Button ID="login_btn" OnClick="login_btn_Click" text="登录" runat="server" CssClass="button" />
-
         </asp:Panel>
 
         <asp:Panel ID="register_pannel" runat="server">
@@ -40,15 +32,13 @@
             <p></p>
             <asp:TextBox ID="passwd_textbox" type="password"  placehOLDER="密码" runat="server"></asp:TextBox>
             <asp:RequiredFieldValidator runat="server" ForeColor="Red" ControlToValidate="passwd_textbox" style="text">*</asp:RequiredFieldValidator>
-            <p> 
-            </p>
+            <p></p>
             <asp:TextBox ID="passwd_confirm" type="password" placeHolder="请再次输入密码" runat="server"></asp:TextBox>
             <asp:CompareValidator ControlToValidate="passwd_confirm" ControlToCompare="passwd_textbox" runat="server">*</asp:CompareValidator>
             <p></p>
             <asp:TextBox ID="name_textbox" placeholder="昵称" runat="server"></asp:TextBox>
              <asp:RequiredFieldValidator runat="server" ForeColor="Red" ControlToValidate="name_textbox">*</asp:RequiredFieldValidator>
-            <p>                                <asp:label id="register_alert" runat="server" ></asp:label></p>
-
+            <p><asp:label id="register_alert" runat="server" ></asp:label></p>
              <asp:Button ID="register_btn" Text="注册" runat="server" OnClick ="register_btn_Click" CssClass="button"/>
             <asp:Button Text="返回" runat="server" OnClick="back_Click" CausesValidation="false" CssClass="button"/>
         </asp:Panel>

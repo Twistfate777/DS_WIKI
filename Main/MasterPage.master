@@ -178,19 +178,30 @@ html {
         <h1>
             &nbsp;<asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Textlogo.png" />
         </h1>
+         
         </div>
+
+        <asp:button ID="change_passwd" runat="server" Text="修改密码" OnClick="change_passwd_Click"></asp:button>
+        <asp:button ID="system_manager" runat="server" Text="系统管理" OnClick="system_manager_Click"></asp:button>
+        <asp:button ID="exit" CausesValidation="false" runat="server" Text="退出" OnClick="exit_Click"></asp:button>
 
         <div class="topnav">
             <a href="#">首页</a>
             <a href="#">关于</a>
             <a href="#">联系我们</a>
-            <a href="#" style="float:right">登录</a>
+            <a href="./管理页面.aspx">系统管理</a>
+            <a href="./修改密码.aspx">修改密码</a>
+            <a href="./Login.aspx" style="float:right">登录</a>
+            <a href="#" style="float:right">退出</a>
+            
+            
         </div>
 
     <div class="row">
         <div class="leftcolumn">
         <div class="card">
-        <h2>关于本站</h2>
+        <h2><asp:label runat="server" ID="welcom"></asp:label></h2>
+            <h2>关于本站</h2>
         <h5>此处是关于黑暗之魂Wiki网页的介绍</h5>
         <div class="fakeimg" style="height:200px;opacity:1;">
             <asp:Image ID="人物" runat="server" ImageUrl="~/Images/简介1.jpg" Height="400px" Width="100%" BorderColor="Black" CssClass="fakeimg" />
@@ -265,7 +276,7 @@ html {
     <asp:ScriptManager ID="script_manager" runat="server"></asp:ScriptManager>
     <asp:TextBox runat="server" Cssclass="comment_panel" id="comment_input" style="width:60%;height:100px;margin:10px;text-align:left" placeholder="在此处添加评论"/>
             <br />
-    <asp:button runat="server" ID="add_comment_btn"   style="text-align:end;margin-left:10px;" Text="发布评论"></asp:button>
+    <asp:button runat="server" ID="add_comment_btn"   style="text-align:end;margin-left:10px;" Text="发布评论" OnClick="add_comment_btn_Click"></asp:button>
     <asp:UpdatePanel ID="update_panel"  runat="server" UpdateMode="Conditional">
         <ContentTemplate>
     <asp:Repeater ID="comment_repeater"  runat="server" >

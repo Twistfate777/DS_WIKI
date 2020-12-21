@@ -45,10 +45,10 @@ public partial class _Default : System.Web.UI.Page
     {
         if (db.CheckLogin(login_user.Text,login_passwd.Text))
         {
-            Session["Name"] = login_user.Text;
-            if (login_user.Text.Equals("Sam")) Session["Admin"] = true;
-            //TODO 切换到真主页.
-            Response.Redirect("./Home.aspx");
+            Table t = db.GetUser(login_user.Text);
+            Session["User"] = t;
+            if (t.Id == 1) Session["Admin"] = true;
+            Response.Redirect("./Homepage.aspx");
         }
         else
         {

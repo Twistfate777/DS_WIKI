@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage1.master.cs" Inherits="MasterPage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage1.master.cs" Inherits="MasterPage1" %>
 
 <!DOCTYPE html>
 
@@ -73,7 +73,6 @@ div{
   display: block;
   margin-left: 15%;
   margin-right: 15%;
-
   margin-bottom: 15px;
 }
 
@@ -182,6 +181,21 @@ div.transparent image{
 }
 
 
+    .auto-style1 {
+        overflow: hidden;
+        background-color: #333;
+        position: relative;
+        display: block;
+        margin-left: 15%;
+        margin-right: 15%;
+        margin-bottom: 15px;
+        left: 0px;
+        top: 43px;
+        width: 1074px;
+        height: 29px;
+    }
+
+
 </style>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -189,7 +203,7 @@ div.transparent image{
 <body>
     <form id="form1" runat="server">
           <div class="header">
-              <asp:label runat="server" ID="welcom"></asp:label>
+      <asp:label runat="server" ID="welcom"></asp:label>
       <asp:button ID="change_passwd" runat="server" Text="修改密码" OnClick="change_passwd_Click"></asp:button>
       <asp:button ID="system_manager" runat="server" Text="系统管理" OnClick="system_manager_Click"></asp:button>
       <asp:button ID="exit" CausesValidation="false" runat="server" Text="退出" OnClick="exit_Click"></asp:button>
@@ -199,7 +213,7 @@ div.transparent image{
 
   </div>
 
-          <div class="topnav">
+    <div class="auto-style1">
     <a class="active" href="#home">主页</a>
     <a href="#news">人物</a>
     <a href="#contact">武器</a>
@@ -209,15 +223,12 @@ div.transparent image{
         <div class="centered">
 
     <article>
-                <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
 
         </asp:ContentPlaceHolder>
     </article>
 
             </div>
-  <div class="footer">
-    者TM是脚注
-      </div>
     </form>
 </body>
 </html>
