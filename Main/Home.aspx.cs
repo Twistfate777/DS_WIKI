@@ -5,22 +5,30 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Home : System.Web.UI.Page
+public partial class _Default : System.Web.UI.Page
 {
+    DB db = new DB();
     protected void Page_Load(object sender, EventArgs e)
     {
-        if(Session["Admin"] != null)
-        {
-            lb.Text = "欢迎回来,管理员 " + Session["Name"];
-        }
-        else if (Session["Name"] != null)
-        {
-            lb.Text = "Welcome back," + Session["Name"];
-        }
-        else
-        {
-            Response.Redirect("./Default.aspx");
-        }
+        comment_repeater.DataSource = db.GetAllComment();
+        comment_repeater.DataBind();
+        update_panel.Update();
     }
 
+
+    protected void add_comment_btn_Click(object sender, EventArgs e)
+    {
+
+        Comment comment = new Comment();
+        comment.user = (Session["User"] as Table).user;
+        comment.text = comment_input.Text;
+        comment.time = DateTime.Now;
+        db.InsertComment(comment);
+
+        comment_input.Text = string.Empty;
+        comment_repeater.DataSource = db.GetAllComment();
+        comment_repeater.DataBind();
+
+        update_panel.Update();
+    }
 }

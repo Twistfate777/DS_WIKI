@@ -32,6 +32,12 @@ public partial class DataClassesDataContext : System.Data.Linq.DataContext
   partial void InsertTable(Table instance);
   partial void UpdateTable(Table instance);
   partial void DeleteTable(Table instance);
+  partial void InsertComment(Comment instance);
+  partial void UpdateComment(Comment instance);
+  partial void DeleteComment(Comment instance);
+  partial void InsertMagic(Magic instance);
+  partial void UpdateMagic(Magic instance);
+  partial void DeleteMagic(Magic instance);
   #endregion
 	
 	public DataClassesDataContext() : 
@@ -69,6 +75,22 @@ public partial class DataClassesDataContext : System.Data.Linq.DataContext
 		get
 		{
 			return this.GetTable<Table>();
+		}
+	}
+	
+	public System.Data.Linq.Table<Comment> Comment
+	{
+		get
+		{
+			return this.GetTable<Comment>();
+		}
+	}
+	
+	public System.Data.Linq.Table<Magic> Magic
+	{
+		get
+		{
+			return this.GetTable<Magic>();
 		}
 	}
 }
@@ -206,6 +228,346 @@ public partial class Table : INotifyPropertyChanging, INotifyPropertyChanged
 				this._icon = value;
 				this.SendPropertyChanged("icon");
 				this.OniconChanged();
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Comment")]
+public partial class Comment : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _Id;
+	
+	private string _text;
+	
+	private string _user;
+	
+	private System.Nullable<System.DateTime> _time;
+	
+    #region 可扩展性方法定义
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OntextChanging(string value);
+    partial void OntextChanged();
+    partial void OnuserChanging(string value);
+    partial void OnuserChanged();
+    partial void OntimeChanging(System.Nullable<System.DateTime> value);
+    partial void OntimeChanged();
+    #endregion
+	
+	public Comment()
+	{
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+	public int Id
+	{
+		get
+		{
+			return this._Id;
+		}
+		set
+		{
+			if ((this._Id != value))
+			{
+				this.OnIdChanging(value);
+				this.SendPropertyChanging();
+				this._Id = value;
+				this.SendPropertyChanged("Id");
+				this.OnIdChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_text", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+	public string text
+	{
+		get
+		{
+			return this._text;
+		}
+		set
+		{
+			if ((this._text != value))
+			{
+				this.OntextChanging(value);
+				this.SendPropertyChanging();
+				this._text = value;
+				this.SendPropertyChanged("text");
+				this.OntextChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[user]", Storage="_user", DbType="NChar(50)")]
+	public string user
+	{
+		get
+		{
+			return this._user;
+		}
+		set
+		{
+			if ((this._user != value))
+			{
+				this.OnuserChanging(value);
+				this.SendPropertyChanging();
+				this._user = value;
+				this.SendPropertyChanged("user");
+				this.OnuserChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_time", DbType="DateTime")]
+	public System.Nullable<System.DateTime> time
+	{
+		get
+		{
+			return this._time;
+		}
+		set
+		{
+			if ((this._time != value))
+			{
+				this.OntimeChanging(value);
+				this.SendPropertyChanging();
+				this._time = value;
+				this.SendPropertyChanged("time");
+				this.OntimeChanged();
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Magic")]
+public partial class Magic : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _Id;
+	
+	private string _name;
+	
+	private string _effect;
+	
+	private System.Nullable<int> _cost;
+	
+	private string _slot;
+	
+	private string _availability;
+	
+	private string _description;
+	
+    #region 可扩展性方法定义
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
+    partial void OneffectChanging(string value);
+    partial void OneffectChanged();
+    partial void OncostChanging(System.Nullable<int> value);
+    partial void OncostChanged();
+    partial void OnslotChanging(string value);
+    partial void OnslotChanged();
+    partial void OnavailabilityChanging(string value);
+    partial void OnavailabilityChanged();
+    partial void OndescriptionChanging(string value);
+    partial void OndescriptionChanged();
+    #endregion
+	
+	public Magic()
+	{
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int Id
+	{
+		get
+		{
+			return this._Id;
+		}
+		set
+		{
+			if ((this._Id != value))
+			{
+				this.OnIdChanging(value);
+				this.SendPropertyChanging();
+				this._Id = value;
+				this.SendPropertyChanged("Id");
+				this.OnIdChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="NChar(40)")]
+	public string name
+	{
+		get
+		{
+			return this._name;
+		}
+		set
+		{
+			if ((this._name != value))
+			{
+				this.OnnameChanging(value);
+				this.SendPropertyChanging();
+				this._name = value;
+				this.SendPropertyChanged("name");
+				this.OnnameChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_effect", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+	public string effect
+	{
+		get
+		{
+			return this._effect;
+		}
+		set
+		{
+			if ((this._effect != value))
+			{
+				this.OneffectChanging(value);
+				this.SendPropertyChanging();
+				this._effect = value;
+				this.SendPropertyChanged("effect");
+				this.OneffectChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cost", DbType="Int")]
+	public System.Nullable<int> cost
+	{
+		get
+		{
+			return this._cost;
+		}
+		set
+		{
+			if ((this._cost != value))
+			{
+				this.OncostChanging(value);
+				this.SendPropertyChanging();
+				this._cost = value;
+				this.SendPropertyChanged("cost");
+				this.OncostChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_slot", DbType="NChar(10)")]
+	public string slot
+	{
+		get
+		{
+			return this._slot;
+		}
+		set
+		{
+			if ((this._slot != value))
+			{
+				this.OnslotChanging(value);
+				this.SendPropertyChanging();
+				this._slot = value;
+				this.SendPropertyChanged("slot");
+				this.OnslotChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_availability", DbType="NChar(200)")]
+	public string availability
+	{
+		get
+		{
+			return this._availability;
+		}
+		set
+		{
+			if ((this._availability != value))
+			{
+				this.OnavailabilityChanging(value);
+				this.SendPropertyChanging();
+				this._availability = value;
+				this.SendPropertyChanged("availability");
+				this.OnavailabilityChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_description", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+	public string description
+	{
+		get
+		{
+			return this._description;
+		}
+		set
+		{
+			if ((this._description != value))
+			{
+				this.OndescriptionChanging(value);
+				this.SendPropertyChanging();
+				this._description = value;
+				this.SendPropertyChanged("description");
+				this.OndescriptionChanged();
 			}
 		}
 	}
